@@ -1,0 +1,35 @@
+# Eclipse Workspace
+**/.recommenders/**
+**/.sonarlint/**
+**/.metadata/**
+**/Servers/**
+
+# Eclipse Project
+**.classpath
+**.project
+**.settings/
+
+# Intellij
+**.idea/
+**.iml
+**.iws
+
+# Netbeans
+nbactions.xml
+nb-configuration.xml
+
+# Mac
+**.DS_Store
+
+# Allure
+**allure-results**
+
+# Test
+**test-output**
+
+# TYBS
+**local.properties**
+**.springBeans
+**/target/**
+dev/release.properties
+dev/infra/infra-vek/src/main/resources/tybs.infra.vek.properties
