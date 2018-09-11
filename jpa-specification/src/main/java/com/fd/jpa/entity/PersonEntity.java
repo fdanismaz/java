@@ -10,29 +10,30 @@
  *
  * Daha fazla bilgi ve sorularınız için TÜBİTAK ile iletişime geçiniz.
  */
-package com.fd.jpa.model;
+package com.fd.jpa.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.time.Instant;
 
 /**
  * @author furkan.danismaz
- * 10/09/2018 13:51
+ * 10/09/2018 13:41
  */
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class Person {
+@Entity
+@Table(name = "PEOPLE")
+public class PersonEntity extends EntityModel {
 
-	private int id;
+	@Column(name = "NAME")
 	private String name;
+
+	@Column(name = "SURNAME")
 	private String surname;
 
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
-	private LocalDate birthdate;
-
+	@Column(name = "BIRTHDATE")
+	private Instant birthdate;
 }

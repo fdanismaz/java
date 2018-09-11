@@ -10,29 +10,14 @@
  *
  * Daha fazla bilgi ve sorularınız için TÜBİTAK ile iletişime geçiniz.
  */
-package com.fd.jpa.model;
+package com.fd.jpa.repository.person;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.time.LocalDate;
+import com.fd.jpa.entity.PersonEntity;
+import com.fd.jpa.repository.GenericRepository;
 
 /**
  * @author furkan.danismaz
- * 10/09/2018 13:51
+ * 11/09/2018 14:53
  */
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class Person {
-
-	private int id;
-	private String name;
-	private String surname;
-
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
-	private LocalDate birthdate;
-
+public interface PersonRepository extends GenericRepository<PersonEntity> {
 }
