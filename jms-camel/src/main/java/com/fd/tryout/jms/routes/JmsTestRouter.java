@@ -1,15 +1,13 @@
 package com.fd.tryout.jms.routes;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+@Slf4j
 @Component
 public class JmsTestRouter extends RouteBuilder {
-
-    static final Logger log = LoggerFactory.getLogger(JmsTestRouter.class);
 
     @Override
     public void configure() throws Exception {
