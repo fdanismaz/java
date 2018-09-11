@@ -12,11 +12,12 @@
  */
 package com.fd.jpa.converter;
 
-import com.fd.jpa.entity.PersonEntityModel;
+import com.fd.jpa.entity.PersonEntity;
 import com.fd.jpa.model.Person;
 import org.mapstruct.Context;
 import org.mapstruct.Mapper;
 
+import java.util.List;
 import java.util.TimeZone;
 
 /**
@@ -26,11 +27,17 @@ import java.util.TimeZone;
 @Mapper(config = EntityMapperConfig.class, componentModel = "spring")
 public interface PersonEntityMapper {
 
-	Person toBusinessModel(PersonEntityModel entityModel,
-						   @Context CycleAvoidingMappingContext context,
-						   @Context TimeZone timeZone);
+	Person toBusinessObject(PersonEntity entity,
+							@Context CycleAvoidingMappingContext context,
+							@Context TimeZone timeZone);
 
-	PersonEntityModel toEntityModel(Person p,
-									@Context CycleAvoidingMappingContext context,
-									@Context TimeZone timeZone);
+	PersonEntity toEntity(Person bo,
+						  @Context CycleAvoidingMappingContext context,
+						  @Context TimeZone timeZone);
+
+
+	List<PersonEntity> toEntityList(List<Person> boList, @Context CycleAvoidingMappingContext context);
+
+	List<Person> toBusinessObjectList(List<PersonEntity> entityList, @Context CycleAvoidingMappingContext context);
+
 }

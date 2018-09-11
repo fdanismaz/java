@@ -10,30 +10,15 @@
  *
  * Daha fazla bilgi ve sorularınız için TÜBİTAK ile iletişime geçiniz.
  */
-package com.fd.jpa.entity;
+package com.fd.jpa.repository;
 
-import lombok.Data;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import java.time.Instant;
+import com.fd.jpa.entity.EntityModel;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 /**
  * @author furkan.danismaz
- * 10/09/2018 13:41
+ * 11/09/2018 14:54
  */
-@Data
-@Entity
-@Table(name = "PEOPLE")
-public class PersonEntityModel extends EntityModel {
-
-	@Column(name = "NAME")
-	private String name;
-
-	@Column(name = "SURNAME")
-	private String surname;
-
-	@Column(name = "BIRTHDATE")
-	private Instant birthdate;
+public interface GenericRepository<T extends EntityModel> extends JpaRepository<T, Integer>, JpaSpecificationExecutor<T> {
 }
