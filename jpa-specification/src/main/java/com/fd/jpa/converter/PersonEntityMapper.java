@@ -36,8 +36,12 @@ public interface PersonEntityMapper {
 						  @Context TimeZone timeZone);
 
 
-	List<PersonEntity> toEntityList(List<Person> boList, @Context CycleAvoidingMappingContext context);
+	List<PersonEntity> toEntityList(List<Person> boList,
+									@Context CycleAvoidingMappingContext context,
+									@Context TimeZone timeZone);
 
-	List<Person> toBusinessObjectList(List<PersonEntity> entityList, @Context CycleAvoidingMappingContext context);
+	List<Person> toBusinessObjectList(List<PersonEntity> entityList,
+									  @Context CycleAvoidingMappingContext context,
+									  @Context TimeZone timeZone);
 
 }

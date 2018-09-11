@@ -62,7 +62,7 @@ public class PersonController extends BaseController {
 		List<PersonEntity> searchResult = this.personRepository.findAll(
 				Specification.where(PersonSpecifications.withName(name))
 						.and(PersonSpecifications.withSurname(surname)));
-		return this.personEntityMapper.toBusinessObjectList(searchResult, new CycleAvoidingMappingContext());
+		return this.personEntityMapper.toBusinessObjectList(searchResult, new CycleAvoidingMappingContext(), this.getRequestTimeZone());
 	}
 
 	@PostMapping
