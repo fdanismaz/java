@@ -1,0 +1,16 @@
+fd:
+  microservice:
+    user:
+      name: fd-user-service
+
+spring:
+  application:
+    name: fd-user-feign-client
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
