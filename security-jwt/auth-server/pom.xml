@@ -9,7 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>stateless-auth</artifactId>
+    <artifactId>auth-server</artifactId>
+
+    <properties>
+        <spring-security-jwt.version>1.0.9.RELEASE</spring-security-jwt.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -42,6 +46,12 @@
         <dependency>
             <groupId>io.lettuce</groupId>
             <artifactId>lettuce-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-jwt</artifactId>
+            <version>${spring-security-jwt.version}</version>
         </dependency>
     </dependencies>
 

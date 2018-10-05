@@ -1,11 +1,11 @@
-package com.fd.tryout.jwt;
+package com.fd.tryout.authserver.jwt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author fdanismaz
- * date: 10/5/18 6:05 AM
+ * @author furkand
+ * 10/5/2018 10:45 AM
  */
 @SpringBootApplication
 public class App {
@@ -15,3 +15,4 @@ public class App {
     }
 
 }
+
