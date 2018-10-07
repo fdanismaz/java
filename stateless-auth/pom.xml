@@ -10,6 +10,7 @@
     <modules>
         <module>simple-auth-service</module>
         <module>stateless-auth-dto</module>
+        <module>spring-session-auth</module>
     </modules>
     <packaging>pom</packaging>
 

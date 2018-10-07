@@ -1,0 +1,28 @@
+server:
+  port: 8082
+  servlet:
+    session:
+      timeout: 60 # If suffix is not specified, seconds will be used
+
+logging:
+  level:
+    ROOT: INFO
+    org.spring.framework: ERROR
+    com.fd: TRACE
+  pattern:
+    console: "%-5level %d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    #password:
+  session:
+    store-type: redis
+    redis:
+      flush-mode: on-save
+      namespace: spring:session
+
+#  security:
+#    user:
+#      password: 123456
