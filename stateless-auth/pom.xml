@@ -5,10 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.fd</groupId>
-    <artifactId>security.jwt</artifactId>
+    <artifactId>stateless-auth</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>auth-server</module>
+        <module>simple-auth-service</module>
+        <module>stateless-auth-dto</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -48,6 +49,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 
