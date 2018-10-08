@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: zuul-proxy
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+
+zuul:
+  routes:
+    customer-service:
+      serviceId: customer-service
+  host:
+    socket-timeout-millis: 30000
+
+logging:
+  level:
+    ROOT: INFO
+    org.spring.framework: ERROR
+    com.fd: TRACE
+  pattern:
+    console: "%-5level %d{yyyy-MM-dd HH:mm:ss} - %msg%n"
