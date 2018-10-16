@@ -57,7 +57,7 @@
                         </goals>
                         <phase>integration-test</phase>
                         <configuration>
-                            <skipTests>${skip.surefire.tests}</skipTests>
+                            <skipTests>${skipIntegrationTests}</skipTests>
                             <excludes>
                                 <exclude>none</exclude>
                             </excludes>
