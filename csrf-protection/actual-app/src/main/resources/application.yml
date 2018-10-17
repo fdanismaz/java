@@ -4,7 +4,7 @@ server:
 logging:
   level:
     ROOT: INFO
-    org.spring.framework: ERROR
+    org.springframework: ERROR
     com.fd: TRACE
   pattern:
     console: "%-5level %d{yyyy-MM-dd HH:mm:ss} - %msg%n"
