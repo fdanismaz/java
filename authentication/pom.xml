@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.fd</groupId>
-    <artifactId>stateless-auth</artifactId>
+    <artifactId>authentication</artifactId>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -35,11 +35,11 @@
         <mapstruct.version>1.2.0.Final</mapstruct.version>
         <hibernate.jpamodelgen-version>5.3.2.Final</hibernate.jpamodelgen-version>
         <jaxb.version>2.3.0</jaxb.version>
+        <jjwt.version>0.9.1</jjwt.version>
 
         <maven.plugin.compiler.version>3.7.0</maven.plugin.compiler.version>
         <maven.plugin.build-helper.version>3.0.0</maven.plugin.build-helper.version>
         <maven.plugin.processor.version>3.2.0</maven.plugin.processor.version>
-
     </properties>
 
     <dependencyManagement>
@@ -106,7 +106,7 @@
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt</artifactId>
-                <version>0.9.1</version>
+                <version>${jjwt.version}</version>
             </dependency>
 
             <dependency>

@@ -40,14 +40,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new DbAuthenticationProvider(this.userRepository);
     }
 
-//    @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//        UserDetails admin = User.withUsername("admin").password("{noop}admin").roles("ADMIN, USER").build();
-//        UserDetails john = User.withUsername("john").password("{noop}doe").roles("ADMIN, USER").build();
-//
-//        auth.inMemoryAuthentication().withUser(admin).withUser(john);
-//    }
-
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity

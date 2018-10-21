@@ -3,6 +3,7 @@ package com.fd.tryout.security.jwt;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.Data;
 import lombok.var;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -52,6 +53,11 @@ public class JwtUsernamePasswordAuthenticationFilter extends AbstractAuthenticat
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response,
                                             FilterChain chain, Authentication auth) {
+        String token = this.generateToken(auth);
+        response.addHeader(config.getHeader(), config.getPrefix() + " " + token);
+    }
+
+    private String generateToken(Authentication auth) {
         Instant now = Instant.now();
         List<String> authorities = auth.getAuthorities().stream().map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toList());
@@ -62,6 +68,12 @@ public class JwtUsernamePasswordAuthenticationFilter extends AbstractAuthenticat
                 .setExpiration(Date.from(now.plusSeconds(config.getExpiration())))
                 .signWith(SignatureAlgorithm.HS256, config.getSecret().getBytes())
                 .compact();
-        response.addHeader(config.getHeader(), config.getPrefix() + " " + token);
+        return token;
+    }
+
+    @Data
+    private class User {
+        private String username;
+        private String password;
     }
 }
