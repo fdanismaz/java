@@ -27,9 +27,7 @@ nb-configuration.xml
 # Test
 **test-output**
 
-# TYBS
 **local.properties**
 **.springBeans
 **/target/**
-dev/release.properties
-dev/infra/infra-vek/src/main/resources/tybs.infra.vek.properties
+**release.properties
