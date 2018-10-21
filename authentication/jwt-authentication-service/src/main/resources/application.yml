@@ -1,0 +1,4 @@
+server:
+  port: 8083
+
+com.fd.security.jwt.secret: fdanismaz
