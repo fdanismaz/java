@@ -72,7 +72,7 @@ public class JwtUsernamePasswordAuthenticationFilter extends AbstractAuthenticat
     }
 
     @Data
-    private class User {
+    private static class User {
         private String username;
         private String password;
     }
