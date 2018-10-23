@@ -17,7 +17,7 @@ public class UserRepository {
             System.out.println("Reading john doe from repository...");
             return User.builder().id(1).name("john").surname("doe").build();
         } else if (id == 2) {
-            System.out.println("Reading cansu from repository...");
+            System.out.println("Reading jane doe from repository...");
             return User.builder().id(2).name("jane").surname("doe").build();
         }
         return null;
