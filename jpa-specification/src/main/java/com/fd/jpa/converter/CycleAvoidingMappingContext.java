@@ -13,34 +13,14 @@ import java.util.Map;
  */
 public class CycleAvoidingMappingContext {
 
-	/** The known instances. */
 	private Map<Object, Object> knownInstances = new IdentityHashMap<>();
 
-	/**
-	 * Gets the mapped instance.
-	 *
-	 * @param <T>
-	 *            the generic type
-	 * @param source
-	 *            the source
-	 * @param targetType
-	 *            the target type
-	 * @return the mapped instance
-	 */
 	@SuppressWarnings("unchecked")
 	@BeforeMapping
 	public <T> T getMappedInstance(Object source, @TargetType Class<T> targetType) {
 		return (T) knownInstances.get(source);
 	}
 
-	/**
-	 * Store mapped instance.
-	 *
-	 * @param source
-	 *            the source
-	 * @param target
-	 *            the target
-	 */
 	@BeforeMapping
 	public void storeMappedInstance(Object source, @MappingTarget Object target) {
 		knownInstances.put(source, target);
