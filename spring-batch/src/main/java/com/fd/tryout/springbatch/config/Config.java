@@ -27,10 +27,10 @@ import org.springframework.core.io.ClassPathResource;
 public class Config {
 
     @Autowired
-    public JobBuilderFactory jobBuilderFactory;
+    private JobBuilderFactory jobBuilderFactory;
 
     @Autowired
-    public StepBuilderFactory stepBuilderFactory;
+    private StepBuilderFactory stepBuilderFactory;
 
     @Autowired
     private Step toUpperCaseConverter;
@@ -73,7 +73,7 @@ public class Config {
     }
 
     @Bean
-    public Step toUpperCaseConverter(PersonStreamWriter writer) {
+    public Step toUpperCaseConverter() {
         return this.stepBuilderFactory.get("toUpperCase")
                 .<Person, Person>chunk(10)
                 .reader(this.reader())
