@@ -1,4 +1,4 @@
-package com.fd.tryout.aws.lambda;
+package com.fd.tryout.aws.lambda.service;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.fd.tryout.aws.lambda.model.MyRequest;

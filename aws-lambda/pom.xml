@@ -16,10 +16,12 @@
         <maven.plugins.maven-shade-plugin.version>2.4.3</maven.plugins.maven-shade-plugin.version>
         <maven.plugins.maven-compiler-plugin.version>3.6.1</maven.plugins.maven-compiler-plugin.version>
         <maven.plugins.maven-build-helper.version>3.0.0</maven.plugins.maven-build-helper.version>
-
+        <maven.plugins.maven-shade-plugin.version>2.3</maven.plugins.maven-shade-plugin.version>
 
         <aws-lambda-java-core.version>1.2.0</aws-lambda-java-core.version>
         <aws-lambda-java-log4j2.version>1.1.0</aws-lambda-java-log4j2.version>
+        <aws-lambda-java-events.version>2.2.3</aws-lambda-java-events.version>
+        <aws-java-sdk-s3.version>1.11.447</aws-java-sdk-s3.version>
 
         <lombok.version>1.18.4</lombok.version>
         <dagger.version>2.19</dagger.version>
@@ -35,8 +37,20 @@
 
         <dependency>
             <groupId>com.amazonaws</groupId>
+            <artifactId>aws-lambda-java-events</artifactId>
+            <version>${aws-lambda-java-events.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.amazonaws</groupId>
             <artifactId>aws-lambda-java-log4j2</artifactId>
             <version>${aws-lambda-java-log4j2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-s3</artifactId>
+            <version>${aws-java-sdk-s3.version}</version>
         </dependency>
 
         <dependency>
@@ -92,6 +106,23 @@
                                  <source>target/generated-sources/annotations</source>
                              </sources>
                          </configuration>
+                     </execution>
+                 </executions>
+             </plugin>
+
+             <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-shade-plugin</artifactId>
+                 <version>${maven.plugins.maven-shade-plugin.version}</version>
+                 <configuration>
+                     <createDependencyReducedPom>false</createDependencyReducedPom>
+                 </configuration>
+                 <executions>
+                     <execution>
+                         <phase>package</phase>
+                         <goals>
+                             <goal>shade</goal>
+                         </goals>
                      </execution>
                  </executions>
              </plugin>
