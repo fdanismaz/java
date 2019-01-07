@@ -16,7 +16,6 @@ import java.util.concurrent.Executors;
 public class TryExecutorService {
 
     public static void main(String[] args) {
-
         ExecutorService s = Executors.newFixedThreadPool(5);
         Runnable r = () -> System.out.println("Hello world!");
         s.submit(r);

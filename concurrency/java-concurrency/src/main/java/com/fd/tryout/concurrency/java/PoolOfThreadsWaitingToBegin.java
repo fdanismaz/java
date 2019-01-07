@@ -73,8 +73,8 @@ public class PoolOfThreadsWaitingToBegin {
                 .limit(15)
                 .collect(Collectors.toList());
 
-        System.out.println("Threads are generated, waiting for them to become ready...");
         workerList.forEach(worker -> s.submit(worker));
+        System.out.println("Threads are generated, waiting for them to become ready...");
         readyThreadCounter.await(); // Wait until all threads get in their run method
         System.out.println("All threads are ready");
 
