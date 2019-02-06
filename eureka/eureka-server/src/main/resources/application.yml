@@ -1,10 +1,21 @@
 server:
   port: 8761
 
+server:
+  servlet:
+    contextPath: /serviceregistry
+
+# Standalone configuration
 eureka:
+  instance:
+    hostname: registry
   client:
     register-with-eureka: false
     fetch-registry: false
+    serviceUrl:
+      # default zone points to self
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
 
 logging:
   level:

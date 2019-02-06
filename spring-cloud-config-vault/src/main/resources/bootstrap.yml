@@ -1,0 +1,8 @@
+spring.cloud.config.server:
+  vault:
+    port: 8200
+    host: 127.0.0.1
+    scheme: http
+    authentication: TOKEN
+    token: s.KtzTWNq71LL85R5EMYzfldpa
+    kv-version: 2

@@ -1,0 +1,8 @@
+server:
+  servlet:
+    context-path: /config
+
+spring:
+  application:
+    name: configserver
+
