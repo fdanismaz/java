@@ -11,6 +11,11 @@ server:
   port: 8080
 
 eureka:
+  server:
+    host: localhost:8761
+    contextPath: serviceregistry
   client:
     serviceUrl:
-      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+      defaultZone: ${EUREKA_URI:http://${eureka.server.host}/${eureka.server.contextPath}/eureka}
+  instance:
+    preferIpAddress: true
