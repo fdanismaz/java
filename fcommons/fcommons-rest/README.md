@@ -16,7 +16,7 @@ A secondary purpose is to give a easy to access request context which contains t
 </dependency>
 ```
 
-### Extend Your Rest Controller from `FinopsifyRestController`
+### Extend Your Rest Controller from `FRestController`
 In your Rest Controllers, just extend from `FRestController` and use its `success()` or `success(data)` 
 methods for returning response to client.
 
