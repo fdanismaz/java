@@ -31,13 +31,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/account")
-public class AccountController extends FRestController {
+@RequestMapping("/user")
+public class UserController extends FRestController {
     
     @GetMapping("/{id}")
-    public ResponseEntity<AwsAccount> getAccountById(@PathVariable("id") String accountId) {
-        AwsAccount account = ...;
-        return this.success(account);
+    public ResponseEntity<User> getUserById(@PathVariable("id") String userId) {
+        User user = ...;
+        return this.success(user);
     }
 }
 ```
