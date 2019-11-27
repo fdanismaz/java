@@ -72,7 +72,7 @@ validation error, the `FRestControllerAdvice` will add separate error item into 
     "errors": [
         {
             "title": "accountId",
-            "message": "Invalid account id. The account id should contain exactly 12 characters",
+            "message": "Invalid username. The username id should contain at least 4 characters",
             "type": "field-error"
         },
         {
@@ -93,7 +93,7 @@ thrown exception's message like below:
     "errors": [
         {
             "title": "Server error",
-            "message": "Account not found for the given provisioning type: COST_REPORTING",
+            "message": "User not found",
             "type": "default-error"
         }
     ]
