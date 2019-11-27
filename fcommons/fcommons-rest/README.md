@@ -71,7 +71,7 @@ validation error, the `FRestControllerAdvice` will add separate error item into 
 {
     "errors": [
         {
-            "title": "accountId",
+            "title": "username",
             "message": "Invalid username. The username id should contain at least 4 characters",
             "type": "field-error"
         },
