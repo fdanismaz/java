@@ -1,0 +1,16 @@
+### GET USERS
+GET {{protocol}}{{host}}/jackson/user/1
+Accept: application/json
+
+
+### POST USER
+POST {{protocol}}{{host}}/jackson/user
+Accept: application/json
+Content-Type: application/json
+
+{
+  "firstName": "furkan",
+  "lastName": "danismaz",
+  "password": "123456",
+  "email": "danismaz.furkan@gmail.com"
+}
