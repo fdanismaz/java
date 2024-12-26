@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "grpc-sample/contract";
+
+package helloworld;
+
+service HelloWorldService {
+  rpc SayHello(HelloWorldRequest) returns (HelloWorldResponse) {}
+}
+
+message HelloWorldRequest {
+  string name = 1;
+  string surname = 2;
+}
+
+message HelloWorldResponse {
+  string message = 1;
+}
